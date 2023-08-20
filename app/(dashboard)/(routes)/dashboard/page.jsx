@@ -31,7 +31,7 @@ const DashboardPage = async () => {
           </p>
           <div className="grid grid-cols-3 mt-4 mb-3 ">
             {blogs.map((blog) => (
-              <Card user={user} blog={blog} />
+              <Card user={user} blog={blog} key={blog.id}/>
             ))}
           </div>
         </div>

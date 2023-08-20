@@ -21,7 +21,7 @@ const Homepage = async () => {
           </p>
           <div className="grid grid-cols-3 mt-4 mb-3 relative">
             {blogs.length>0?(blogs.map((blog) => (
-              <Card user={false} blog={blog} cond={true} />
+              <Card user={false} blog={blog} cond={true} key={blog.id}/>
             ))):"No Any blogs"}
             
           </div>
