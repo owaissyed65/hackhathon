@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { Textarea } from "@/components/ui/textarea";
 const formSchema = z.object({
   title: z
     .string()
@@ -78,10 +79,10 @@ const DashboardForm = () => {
               render={({ field }) => (
                 <FormItem className="w-[80%] ">
                   <FormControl>
-                    <Input
+                    <Textarea
                       placeholder="Whats in your mind..."
+                      className="outline-none border-none px-4 w-full ring-2 ring-offset-2 ring-blue-500 h-16 resize-none"
                       {...field}
-                      className="outline-none border-none px-4 w-full ring-2 ring-offset-2 ring-blue-500 h-16"
                     />
                   </FormControl>
                   <FormMessage />

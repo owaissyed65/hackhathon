@@ -11,10 +11,10 @@ export async function POST(req) {
       return new NextResponse("User id is required", { status: 401 });
     }
     if (!title) {
-      return new NextResponse("Title is required", { status: 401 });
+      return new NextResponse("Title is required", { status: 400 });
     }
     if (!description) {
-      return new NextResponse("Description is required", { status: 401 });
+      return new NextResponse("Description is required", { status: 400 });
     }
     const blog = await prisma.userBlog.create({
       data: {

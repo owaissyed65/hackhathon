@@ -2,15 +2,13 @@ import Card from "@/components/card";
 import Heading from "@/components/heading";
 import prisma from "@/lib/prismadb";
 
-
-
 const Homepage = async () => {
   const blogs = await prisma.userBlog.findMany({
     orderBy: {
       createdAt: "desc",
     },
   });
-  
+
   return (
     <div className="space-y-8">
       <Heading>Welcome To Bloggify</Heading>
@@ -20,10 +18,11 @@ const Homepage = async () => {
             All Blogs
           </p>
           <div className="grid grid-cols-3 mt-4 mb-3 relative">
-            {blogs.length>0?(blogs.map((blog) => (
-              <Card user={false} blog={blog} cond={true} key={blog.id}/>
-            ))):"No Any blogs"}
-            
+            {blogs.length > 0
+              ? blogs.map((blog) => (
+                  <Card blog={blog} cond={true} key={blog.id} />
+                ))
+              : "No Any blogs"}
           </div>
         </div>
       </div>

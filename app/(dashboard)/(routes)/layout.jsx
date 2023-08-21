@@ -9,6 +9,7 @@ const DashboardLayout = async ({ children }) => {
   if (!userId) {
     redirect("/");
   }
+  
   return (
     <div className="h-full ">
       <div className="fixed w-full z-[80]">

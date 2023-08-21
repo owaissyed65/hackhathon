@@ -11,11 +11,13 @@ const Navbar = ({ user, userId }) => {
         </div>
         <div className="flex gap-x-4 items-center">
           {user && (
-            <div className="text-white">
-              {user?.firstName
-                ? user?.firstName
-                : user.emailAddresses[0].emailAddress}
-            </div>
+            <Link href={`/dashboard/${userId}`}>
+              <div className="text-white">
+                {user?.firstName
+                  ? user?.firstName
+                  : user.emailAddresses[0].emailAddress}
+              </div>
+            </Link>
           )}
 
           {!user ? (
